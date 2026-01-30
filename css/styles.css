@@ -1,0 +1,296 @@
+body{
+    width: 100%;
+    background-color: #ffffff;
+    font-family: "Rubik", sans-serif;
+    text-align: center;
+    margin: 0%;
+}
+/* ANIMATIONINTRO */
+#loader {
+    position: fixed;
+    inset: 0;
+    background-color: #2A9091;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+.loader-logo {
+    width: 240px;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: logoIn 0.8s ease-out forwards,
+    pulse 1.5s ease-in-out infinite;
+    animation-delay: 0.2s, 1s;
+}
+#loader.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+@keyframes logoIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* NAV */
+li {
+    list-style: none;
+}
+.Nav a {
+    color: black;
+    text-decoration: none;
+}
+header {
+    font-size: 1.1rem;
+    margin: 0 10%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+button {
+    all: unset;
+    cursor: pointer;
+}
+#cerrar {
+    color: #ffffff;
+    display: none;
+}
+.Menu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 4rem;
+}
+.Phonebar {
+    display: none;
+}
+.line {
+    background-color: #2A9091;
+    height: 10px;
+    width: 100%;
+    display: none;
+}
+/* INDEX ADS */
+.ads {
+    display: grid;
+    grid-template: minmax(40%,auto) minmax(25%,60%) / minmax(50%,85%) minmax(15%,50%);
+}
+.adimg {
+    grid-row: span 2;
+    line-height:0;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    text-align: left;
+    background-color: #2A9091;
+    color: #ffffff;
+    padding: 20px;
+}
+.sangria1 {
+    padding-left: 56px;
+    text-indent: -56px; 
+}
+.sangria2 {
+    padding-left: 45px;
+    text-indent: -45px;
+}
+.price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.price h2{
+    color:#2A9091;
+    font-size: 3rem;
+}
+.price h3  {
+    margin-top: 0%;
+    font-size: 2.3rem;
+    font-weight: 100;
+}
+.price p {
+    text-align: end;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+/* NOSOTROS INFO */
+.about {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10%;
+    padding-bottom: 5%;
+    justify-content: center;
+    text-align: justify;
+}
+.about h2 {
+    text-align: center;
+}
+/* FOOTER */
+#Footer {
+    background-color: #2A9091;
+}
+.Footer-cont {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10%;
+    padding: 40px 0;
+    color: #ffffff;
+}
+#Footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+.phone {
+    display: flex;
+    justify-content: center;
+}
+.phone img {
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+.location {
+    display: flex;
+    justify-content: center;
+
+}
+.location img {
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+@media screen and (max-width: 1219px) {
+    .Nav {
+        font-size: 0.9rem;
+    }
+
+    .info {
+        font-size: 0.9rem;
+    }
+    .price h2 {
+        font-size: 2.7rem;
+    }
+    .price h3 {
+        font-size: 1.6rem;
+    }
+    .price p {
+        text-align: end;
+        margin: 0;
+        font-size: 1rem;
+    }
+    .sangria1 {
+        padding-left: 46px;
+        text-indent: -46px; 
+    }
+    .sangria2 {
+        padding-left: 37px;
+        text-indent: -37px;
+    }
+}
+
+@media screen and (max-width: 959px) {
+    header {
+        margin: 0;
+        padding: 0 5%;
+    }
+    .bauyaxlogo {
+        display: none;
+    }
+
+    .Phonebar {
+        width: 100%;
+        padding-top: 8px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .Phonebar img {
+        height: 30px;
+    }
+    .line {
+        display: block;
+    }
+    .Nav a {
+        color:#ffffff
+    }
+    #cerrar {
+        display: block;
+        margin: 0;
+    }
+
+    .Nav {
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 2rem;
+        text-align: right;
+        position: fixed;
+        top: 0px;
+        right: 0;
+        bottom: 0;
+        background-color: #2A9091;
+        padding: 40px 50px;
+        box-shadow: 0 0 0 100vmax rgba(42, 144, 145, 0.4);
+        transform: translateX(100%);
+        transition: all 0.3s ease;
+    }
+    .Nav.visible {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(0);
+    }
+    .Menu {
+        flex-direction: column;     
+        gap: 2rem;
+    }
+
+    .ads {
+        grid-template: 1fr 1fr / 1fr 1fr
+    }
+    .adimg {
+    display: flex;
+    align-items: center;
+    grid-column: span 2;
+    }
+    
+    .Footer-cont {
+        margin: 0;
+        padding: 3% 5%;
+    }
+    
+}
+
+@media screen and (max-width: 767px) {
+    .price h2 {
+        font-size: 2.3rem;
+    }
+    .price h3 {
+        font-size: 1.4rem;
+    }
+    .price p {
+        text-align: end;
+        margin: 0;
+        font-size: 0.9rem;
+    }
+    .Footer-cont {
+        flex-direction: column;
+    }
+    .copyright {
+        order: 2;
+    }
+}
+@media screen and (max-width: 480px) {
+    .ads {
+       display: block;
+    }
+}
